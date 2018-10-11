@@ -1,0 +1,13 @@
+<ActionBar title="Users" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="userList" class="list-group">
+        <ng-template let-item="item">
+            <GridLayout columns="*,*,*">
+                <Label col="0" [text]="item.firstname" class="list-group-item active" [ngClass]="item.id === 0 ? 'header' : ''"></Label>
+                <Label col="1" [text]="item.lastname" class="list-group-item active" [ngClass]="item.id === 0 ? 'header' : ''"></Label>
+                <Label col="2" [text]="item.organisation" class="list-group-item active" [ngClass]="item.id === 0 ? 'header' : ''"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

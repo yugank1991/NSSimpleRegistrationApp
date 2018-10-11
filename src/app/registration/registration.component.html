@@ -1,0 +1,37 @@
+<ActionBar title="Register">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="center">
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF" [formGroup]="registrationForm">
+                <StackLayout class="input-field">
+                    <Label text="First Name" class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" formControlName="firstname" (textChange)="clearErrors($event)"></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field" *ngIf="error[0]">
+                    <Label text="First Name is required" class="font-weight-bold" style="color: #dc3545;"></Label>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label text="Last Name" class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" formControlName="lastname" (textChange)="clearErrors($event)"></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field" *ngIf="error[1]">
+                    <Label text="Last Name is required" class="font-weight-bold" style="color: #dc3545;"></Label>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label text="Organisation" class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" formControlName="organisation" (textChange)="clearErrors($event)"></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field" *ngIf="error[2]">
+                    <Label text="Organisation is required" class="font-weight-bold" style="color: #dc3545;"></Label>
+                </StackLayout>
+                <Button class="btn btn-primary w-full" text="Save" (tap)="save()"></Button>
+                <Button class="btn btn-link w-full" text="View" (tap)="view()"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>
