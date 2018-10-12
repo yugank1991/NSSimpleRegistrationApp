@@ -1,0 +1,124 @@
+<GridLayout backgroundColor="#252525">
+    <ScrollView>
+        <StackLayout>
+
+            <StackLayout class="input-field">
+                <GridLayout columns="*,*">
+                    <StackLayout col="0" class="input-field centered" backgroundColor="#FF3F60" height="100" margin="10">
+                        <Label text="L002" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                    <StackLayout col="1" class="input-field centered" backgroundColor="#FF934B" height="100" margin="10">
+                        <Label text="L035" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <GridLayout columns="*,*">
+                    <StackLayout col="0" class="input-field centered" backgroundColor="#FFC467" height="100" margin="10">
+                        <Label text="L003" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                    <StackLayout col="1" class="input-field centered" backgroundColor="#BC1AFF" height="100" margin="10">
+                        <Label text="L058" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <GridLayout columns="*,*">
+                    <StackLayout col="0" class="input-field centered" backgroundColor="#FF931A" height="100" margin="10">
+                        <Label text="L004" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                    <StackLayout col="1" class="input-field centered" backgroundColor="#FF0000" height="100" margin="10">
+                        <Label text="L027" class="label upper-colored-lbl"></Label>
+                        <Label text="Gel Name" class="label bottom-colored-lbl"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <GridLayout columns="*,*,*">
+                    <Button col="0" text="Color" class="btn" (tap)="setColorType(0)" [ngClass]="{'button-active': colorType === 0, 'button-inactive' : colorType !== 0}"></Button>
+                    <Button col="1" text="Hue" class="btn" (tap)="setColorType(1)" [ngClass]="{'button-active': colorType === 1, 'button-inactive' : colorType !== 1}"></Button>
+                    <Button col="2" text="Gel" class="btn" (tap)="setColorType(2)" [ngClass]="{'button-active': colorType === 2, 'button-inactive' : colorType !== 2}"></Button>
+                </GridLayout>
+            </StackLayout>
+
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="input-field" padding="10">
+                <GridLayout columns="25,*,*">
+                    <Label col="0" text="&#xf0e2;" class="font-awesome font-18" color="white"></Label>
+                    <Label col="1" text="Color Temp" class="label font-weight-bold m-b-5 font-18" color="white"></Label>
+                    <Label col="2" [text]="(color['colorTemp']*100)+'K'" class="label font-weight-bold m-b-5 font-18 pull-right"
+                        color="white"></Label>
+                </GridLayout>
+                <GridLayout columns="*">
+                    <StackLayout class="slider-container">
+                        <Slider value="32" (valueChange)="sliderChange($event,'colorTemp')" minValue="0" maxValue="100"
+                            backgroundColor="white" color="#4BD0F6" style="height: 100px;"></Slider>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="input-field" padding="10">
+                <GridLayout columns="25,*,*">
+                    <Label col="0" text="&#xf0e2;" class="font-awesome font-18" color="white"></Label>
+                    <Label col="1" text="Red" class="label font-weight-bold m-b-5 font-18" color="white"></Label>
+                    <Label col="2" [text]="color['red']" class="label font-weight-bold m-b-5 pull-right font-18" color="white"></Label>
+                </GridLayout>
+                <GridLayout columns="*">
+                    <StackLayout class="slider-container">
+                        <Slider value="100" (valueChange)="sliderChange($event,'red')" minValue="0" maxValue="100"
+                            backgroundColor="white" color="#4BD0F6" style="height: 100px;"></Slider>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="input-field" padding="10">
+                <GridLayout columns="25,*,*">
+                    <Label col="0" text="&#xf0e2;" class="font-awesome font-18" color="white"></Label>
+                    <Label col="1" text="Green" class="label font-weight-bold m-b-5 font-18" color="white"></Label>
+                    <Label col="2" [text]="color['green']" class="label font-weight-bold m-b-5 pull-right font-18"
+                        color="white"></Label>
+                </GridLayout>
+                <GridLayout columns="*">
+                    <StackLayout class="slider-container">
+                        <Slider value="100" (valueChange)="sliderChange($event,'green')" minValue="0" maxValue="100"
+                            backgroundColor="white" color="#4BD0F6" style="height: 100px;"></Slider>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="input-field" padding="10">
+                <GridLayout columns="25,*,*">
+                    <Label col="0" text="&#xf0e2;" class="font-awesome font-18" color="white"></Label>
+                    <Label col="1" text="Blue" class="label font-weight-bold m-b-5 font-18" color="white"></Label>
+                    <Label col="2" [text]="color['blue']" class="label font-weight-bold m-b-5 pull-right font-18" color="white"></Label>
+                </GridLayout>
+                <GridLayout columns="*">
+                    <StackLayout class="slider-container">
+                        <Slider value="100" (valueChange)="sliderChange($event,'blue')" minValue="0" maxValue="100"
+                            backgroundColor="white" color="#4BD0F6" style="height: 100px;"></Slider>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="input-field" padding="10">
+                <Label text="Fan" class="label font-weight-bold m-b-5 font-18" color="white"></Label>
+                <GridLayout columns="*,*,*">
+                    <Button col="0" text="Off" class="btn" (tap)="setFanType(0)" [ngClass]="{'button-active': fanType === 0, 'button-inactive' : fanType !== 0}"></Button>
+                    <Button col="1" text="Auto" class="btn" (tap)="setFanType(1)" [ngClass]="{'button-active': fanType === 1, 'button-inactive' : fanType !== 1}"></Button>
+                    <Button col="2" text="Full" class="btn" (tap)="setFanType(2)" [ngClass]="{'button-active': fanType === 2, 'button-inactive' : fanType !== 2}"></Button>
+                </GridLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

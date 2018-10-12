@@ -1,10 +1,8 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { AppRoutingModule } from "./app.routing";
+import { AppRoutingModule, navigatableComponents } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { RegistrationComponent } from './registration/registration.component';
-import { UserListComponent } from "./user-list/user-list.component";
 import { UserService } from "./registration/user.service";
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -25,8 +23,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     ],
     declarations: [
         AppComponent,
-        RegistrationComponent,
-        UserListComponent
+        ...navigatableComponents
     ],
     providers: [
         UserService

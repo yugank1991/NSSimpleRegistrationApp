@@ -7,7 +7,6 @@ import { UserService } from "./user.service";
 @Component({
     selector: "ns-registration",
     moduleId: module.id,
-    styleUrls: ['./registration.component.css'],
     templateUrl: "./registration.component.html",
 })
 export class RegistrationComponent implements OnInit {
@@ -52,4 +51,9 @@ export class RegistrationComponent implements OnInit {
     view() {
         this.router.navigate(['list']);
     }
+
+    gotoColorMixer() {
+        this.router.navigate(['color-mixer']);
+    }
+
 }
